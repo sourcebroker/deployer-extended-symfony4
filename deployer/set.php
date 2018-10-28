@@ -57,12 +57,12 @@ set('db_defaults', [
 
 // Look https://github.com/sourcebroker/deployer-extended-database for docs
 set('default_stage', function () {
-    return (new \SourceBroker\DeployerExtendedSymfony3\Drivers\Symfony4Driver)->getInstanceName();
+    return (new \SourceBroker\DeployerExtendedSymfony4\Drivers\Symfony4Driver)->getInstanceName();
 });
 
 // Look https://github.com/sourcebroker/deployer-extended-database for docs
 set('db_instance', function () {
-    return (new \SourceBroker\DeployerExtendedSymfony3\Drivers\Symfony4Driver)->getInstanceName();
+    return (new \SourceBroker\DeployerExtendedSymfony4\Drivers\Symfony4Driver)->getInstanceName();
 });
 
 // Look https://github.com/sourcebroker/deployer-extended-database for docs
@@ -70,7 +70,7 @@ set('db_databases',
     [
         'database_default' => [
             get('db_defaults'),
-            (new \SourceBroker\DeployerExtendedSymfony3\Drivers\Symfony4Driver)->getDatabaseConfig(),
+            (new \SourceBroker\DeployerExtendedSymfony4\Drivers\Symfony4Driver)->getDatabaseConfig(),
         ]
     ]
 );

@@ -1,6 +1,6 @@
 <?php
 
-namespace SourceBroker\DeployerExtendedSymfony3;
+namespace SourceBroker\DeployerExtendedSymfony4;
 
 use SourceBroker\DeployerLoader\Load;
 

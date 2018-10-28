@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SourceBroker\\DeployerExtendedSymfony3\\": "src/"
+      "SourceBroker\\DeployerExtendedSymfony4\\": "src/"
     }
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SourceBroker\DeployerExtendedSymfony3\Drivers;
+namespace SourceBroker\DeployerExtendedSymfony4\Drivers;
 
 /**
  * Class Symfony4Driver
