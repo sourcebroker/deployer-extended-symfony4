@@ -22,9 +22,6 @@ task('deploy', [
     // Standard deployer deploy:update_code
     'deploy:update_code',
 
-    // Special for symfony4
-    'deploy:create_cache_dir',
-
     // Standard deployer deploy:shared
     'deploy:shared',
 
@@ -59,7 +56,7 @@ task('deploy', [
     // Standard deployer cleanup.
     'cleanup',
 
-])->desc('Deploy your Symfony3 project');
+])->desc('Deploy your Symfony4 project');
 
 after('deploy', 'success');
 
