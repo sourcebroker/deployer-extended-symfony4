@@ -1,15 +1,12 @@
 
 deployer-extended-symfony4
 ==========================
-|
 
-.. image:: http://img.shields.io/packagist/v/sourcebroker/deployer-extended-symfony4.svg?style=flat
-   :target: https://packagist.org/packages/sourcebroker/deployer-extended-symfony4
+    .. image:: http://img.shields.io/packagist/v/sourcebroker/deployer-extended-symfony4.svg?style=flat
+       :target: https://packagist.org/packages/sourcebroker/deployer-extended-symfony4
 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-   :target: https://packagist.org/packages/sourcebroker/deployer-extended-symfony4
-
-|
+    .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+       :target: https://packagist.org/packages/sourcebroker/deployer-extended-symfony4
 
 .. contents:: :local:
 
