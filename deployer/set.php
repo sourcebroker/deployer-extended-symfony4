@@ -2,7 +2,8 @@
 
 namespace Deployer;
 
-// Some parts from https://github.com/deployphp/deployer/blob/master/recipe/symfony4.php
+set('ssh_type', 'native');
+set('ssh_multiplexing', true);
 
 set('symfony_env', 'prod');
 set('shared_dirs', ['var/logs', 'var/sessions']);
