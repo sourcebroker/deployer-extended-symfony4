@@ -19,7 +19,7 @@ class Symfony4Driver
             $absolutePathWithEnvFile = __DIR__ . '/../../../../../.env';
         }
         if (file_exists($absolutePathWithEnvFile)) {
-            (new \Symfony\Component\Dotenv\Dotenv())->load($absolutePathWithEnvFile);
+            (new \Symfony\Component\Dotenv\Dotenv())->loadEnv($absolutePathWithEnvFile);
             $data = parse_url(getenv('DATABASE_URL'));
             $dbConfig = [
                 'driver' => 'pdo_mysql',
@@ -70,7 +70,7 @@ class Symfony4Driver
             $absolutePathWithEnvFile = __DIR__ . '/../../../../../.env';
         }
         if (file_exists($absolutePathWithEnvFile)) {
-            (new \Symfony\Component\Dotenv\Dotenv())->load($absolutePathWithEnvFile);
+            (new \Symfony\Component\Dotenv\Dotenv())->loadEnv($absolutePathWithEnvFile);
             if (!class_exists(\Symfony\Component\Yaml\Yaml::class)) {
                 throw new \RuntimeException('Unable to read yaml as the Symfony Yaml Component is not installed.');
             } else {
