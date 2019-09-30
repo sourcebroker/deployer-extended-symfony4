@@ -19,7 +19,7 @@
     "sourcebroker/deployer-extended-media": "^4.0",
     "sourcebroker/deployer-extended-database": "^7.0",
     "sourcebroker/deployer-loader": "^1.0",
-    "symfony/dotenv": "^4.0"
+    "symfony/dotenv": "^4.2"
   },
   "autoload": {
     "psr-4": {
