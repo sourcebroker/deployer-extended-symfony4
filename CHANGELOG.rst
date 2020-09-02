@@ -2,6 +2,11 @@
 Changelog
 ---------
 
+master
+~~~~~~
+
+1) [BREAKING] Increase deployer/dist version, and deployer-extended-* stack.
+
 1.0.2
 ~~~~~
 
