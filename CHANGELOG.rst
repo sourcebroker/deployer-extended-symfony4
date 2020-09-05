@@ -6,6 +6,7 @@ master
 ~~~~~~
 
 1) [BREAKING] Increase deployer/dist version, and deployer-extended-* stack.
+2) [BREAKING] Modify deploy tasks order / add new tasks to deploy.
 
 1.0.2
 ~~~~~
