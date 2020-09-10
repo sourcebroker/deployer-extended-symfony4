@@ -14,6 +14,8 @@ master
 7) [BREAKING] Remove ``bin_dir`` / ``var_dir``, refactor ``bin/console`` and ``console_options``.
 8) [TASK] Set ``default_timeout`` to 900 sec.
 9) [BREAKING] Remove ``default_stage`` and ``db_instance`` as they are not needed in new deployer-extended-* stack.
+10) [BREAKING] Remove getInstanceName method from Symfony4Driver because its not longer used.
+
 
 1.0.2
 ~~~~~

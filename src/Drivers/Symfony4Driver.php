@@ -2,24 +2,25 @@
 
 namespace SourceBroker\DeployerExtendedSymfony4\Drivers;
 
+use \Symfony\Component\Dotenv\Dotenv;
+
 /**
  * Class Symfony4Driver
- * @package SourceBroker\DeployerExtended\Drivers
  */
 class Symfony4Driver
 {
     /**
-     * @param null $absolutePathWithConfig
+     * @param string $absolutePathWithEnvFile
      * @return array
      * @throws \Exception
      */
     public function getDatabaseConfig($absolutePathWithEnvFile = null)
     {
-        if (null == $absolutePathWithEnvFile) {
+        if (null === $absolutePathWithEnvFile) {
             $absolutePathWithEnvFile = __DIR__ . '/../../../../../.env';
         }
         if (file_exists($absolutePathWithEnvFile)) {
-            (new \Symfony\Component\Dotenv\Dotenv())->loadEnv($absolutePathWithEnvFile);
+            (new Dotenv())->loadEnv($absolutePathWithEnvFile);
             $data = parse_url(getenv('DATABASE_URL'));
             $dbConfig = [
                 'driver' => 'pdo_mysql',
@@ -28,6 +29,7 @@ class Symfony4Driver
                 'user' => '',
                 'password' => '',
                 'charset' => 'utf8',
+                'port' => $data['port']
             ];
             if (!empty($data['host'])) {
                 $dbConfig['host'] = $data['host'];
@@ -49,41 +51,9 @@ class Symfony4Driver
             } else {
                 throw new \Exception('Unable to read database password in file: "' . $absolutePathWithEnvFile . '"');
             }
-            if (!empty($data['port'])) {
-                $dbConfig['port'] = $data['port'];
-            }
             return $dbConfig;
-        } else {
-            throw new \Exception('Missing .env file with. Looking for file: "' . $absolutePathWithEnvFile . '"');
         }
 
-    }
-
-    /**
-     * @param null $absolutePathWithConfig
-     * @return string
-     * @throws \Exception
-     */
-    public function getInstanceName($absolutePathWithEnvFile = null)
-    {
-        if (null == $absolutePathWithEnvFile) {
-            $absolutePathWithEnvFile = __DIR__ . '/../../../../../.env';
-        }
-        if (file_exists($absolutePathWithEnvFile)) {
-            (new \Symfony\Component\Dotenv\Dotenv())->loadEnv($absolutePathWithEnvFile);
-            if (!class_exists(\Symfony\Component\Yaml\Yaml::class)) {
-                throw new \RuntimeException('Unable to read yaml as the Symfony Yaml Component is not installed.');
-            } else {
-                $instanceName = null;
-                if (!empty(getenv('INSTANCE'))) {
-                    $instanceName = getenv('INSTANCE');
-                } else {
-                    throw new \Exception('Missing "INSTANCE" variable in file: "' . $absolutePathWithEnvFile . '"');
-                }
-                return $instanceName;
-            }
-        } else {
-            throw new \Exception('Missing file with instance name. Looking for file: "' . $absolutePathWithEnvFile . '"');
-        }
+        throw new \Exception('Missing .env file with. Looking for file: "' . $absolutePathWithEnvFile . '"');
     }
 }
