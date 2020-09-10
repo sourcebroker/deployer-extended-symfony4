@@ -13,6 +13,7 @@ master
 6) [TASK] Load deployer-loader settings.
 7) [BREAKING] Remove ``bin_dir`` / ``var_dir``, refactor ``bin/console`` and ``console_options``.
 8) [TASK] Set ``default_timeout`` to 900 sec.
+9) [BREAKING] Remove ``default_stage`` and ``db_instance`` as they are not needed in new deployer-extended-* stack.
 
 1.0.2
 ~~~~~
