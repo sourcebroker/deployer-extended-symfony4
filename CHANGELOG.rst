@@ -11,6 +11,7 @@ master
 4) [TASK] Add buffer settings.
 5) [BREAKING] Change shared file from .env to .env.local.
 6) [TASK] Load deployer-loader settings.
+7) [BREAKING] Remove ``bin_dir`` / ``var_dir``, refactor ``bin/console`` and ``console_options``.
 
 1.0.2
 ~~~~~
