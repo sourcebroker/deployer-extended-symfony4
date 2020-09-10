@@ -3,6 +3,7 @@
 namespace Deployer;
 
 set('web_path', 'web/');
+set('default_timeout', 900);
 set('symfony_env', 'prod');
 set('shared_dirs', ['var/logs', 'var/sessions']);
 set('shared_files', ['.env.local.php', '.env.local']);

@@ -12,6 +12,7 @@ master
 5) [BREAKING] Change shared file from .env to .env.local.
 6) [TASK] Load deployer-loader settings.
 7) [BREAKING] Remove ``bin_dir`` / ``var_dir``, refactor ``bin/console`` and ``console_options``.
+8) [TASK] Set ``default_timeout`` to 900 sec.
 
 1.0.2
 ~~~~~
