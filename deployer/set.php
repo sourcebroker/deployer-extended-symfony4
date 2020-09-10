@@ -2,9 +2,7 @@
 
 namespace Deployer;
 
-set('ssh_type', 'native');
-set('ssh_multiplexing', true);
-
+set('web_path', 'web/');
 set('symfony_env', 'prod');
 set('shared_dirs', ['var/logs', 'var/sessions']);
 set('shared_files', ['.env']);
