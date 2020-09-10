@@ -5,22 +5,26 @@ namespace Deployer;
 set('web_path', 'web/');
 set('symfony_env', 'prod');
 set('shared_dirs', ['var/logs', 'var/sessions']);
-set('shared_files', ['.env']);
+set('shared_files', ['.env.local.php', '.env.local']);
 set('writable_dirs', ['var']);
 set('bin_dir', 'bin');
 set('var_dir', 'var');
+
 set('bin/console', function () {
     return sprintf('{{release_path}}/%s/console', trim(get('bin_dir'), '/'));
 });
+
 set('console_options', function () {
     $options = '--no-interaction --env={{symfony_env}}';
     return get('symfony_env') !== 'prod' ? $options : sprintf('%s --no-debug', $options);
 });
+
 set('env', function () {
     return [
         'SYMFONY_ENV' => get('symfony_env')
     ];
 });
+
 set('clear_paths', [
     '.git',
     '.gitignore',

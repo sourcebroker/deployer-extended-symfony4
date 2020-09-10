@@ -9,6 +9,7 @@ master
 2) [BREAKING] Modify deploy tasks order / add new tasks to deploy.
 3) [TASK] Remove settings which are default in new deployer (ssh_multiplexing, ssh_type). Add ``web_path``.
 4) [TASK] Add buffer settings.
+5) [BREAKING] Change shared file from .env to .env.local.
 
 1.0.2
 ~~~~~
