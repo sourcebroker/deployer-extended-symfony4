@@ -8,6 +8,7 @@ master
 1) [BREAKING] Increase deployer/dist version, and deployer-extended-* stack.
 2) [BREAKING] Modify deploy tasks order / add new tasks to deploy.
 3) [TASK] Remove settings which are default in new deployer (ssh_multiplexing, ssh_type). Add ``web_path``.
+4) [TASK] Add buffer settings.
 
 1.0.2
 ~~~~~

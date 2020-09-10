@@ -73,3 +73,11 @@ set('db_databases',
     ]
 );
 
+// Look on https://github.com/sourcebroker/deployer-extended#buffer-start for docs
+set('buffer_config', function () {
+    return [
+        'index.php' => [
+            'entrypoint_filename' => get('web_path') . 'index.php',
+        ],
+    ];
+});
