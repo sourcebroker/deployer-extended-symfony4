@@ -3,17 +3,21 @@
 namespace Deployer;
 
 set('web_path', 'web/');
+
 set('default_timeout', 900);
+
 set('shared_dirs', [
         'var/logs',
         'var/sessions'
     ]
 );
+
 set('shared_files', [
         '.env.local.php',
         '.env.local'
     ]
 );
+
 set('writable_dirs', [
     'var'
 ]);
@@ -30,11 +34,6 @@ set('clear_paths', [
     '.git',
     '.gitignore',
     '.gitattributes',
-    'composer.json',
-    'composer.lock',
-    'composer.phar',
-    'web/app_*.php',
-    'web/config.php',
 ]);
 
 // Look https://github.com/sourcebroker/deployer-extended-media for docs

@@ -15,7 +15,7 @@ master
 8) [TASK] Set ``default_timeout`` to 900 sec.
 9) [BREAKING] Remove ``default_stage`` and ``db_instance`` as they are not needed in new deployer-extended-* stack.
 10) [BREAKING] Remove getInstanceName method from Symfony4Driver because its not longer used.
-
+11) [BREAKING] Cleanup on clear_path files.
 
 1.0.2
 ~~~~~
