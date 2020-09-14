@@ -62,7 +62,9 @@ set('db_databases',
     [
         'database_default' => [
             get('db_defaults'),
-            (new \SourceBroker\DeployerExtendedSymfony4\Drivers\Symfony4Driver)->getDatabaseConfig(),
+            function () {
+                return (new \SourceBroker\DeployerExtendedSymfony4\Drivers\Symfony4Driver)->getDatabaseConfig();
+            }
         ]
     ]
 );

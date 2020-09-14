@@ -16,6 +16,7 @@ master
 9) [BREAKING] Remove ``default_stage`` and ``db_instance`` as they are not needed in new deployer-extended-* stack.
 10) [BREAKING] Remove getInstanceName method from Symfony4Driver because its not longer used.
 11) [BREAKING] Cleanup on clear_path files.
+12) [FEATURE] User closure for Symfony database driver so its possible to overwrite it.
 
 1.0.2
 ~~~~~
