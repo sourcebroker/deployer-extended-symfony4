@@ -21,34 +21,34 @@ class Symfony4Driver
         }
         if (file_exists($absolutePathWithEnvFile)) {
             (new Dotenv())->loadEnv($absolutePathWithEnvFile);
-            $data = parse_url(getenv('DATABASE_URL'));
             $dbConfig = [
                 'driver' => 'pdo_mysql',
-                'host' => '127.0.0.1',
-                'dbname' => ltrim('/', $data['path']),
-                'user' => '',
-                'password' => '',
                 'charset' => 'utf8',
-                'port' => $data['port']
             ];
-            if (!empty($data['host'])) {
+            if ($databaseUrl = getenv('DATABASE_URL')) {
+                $data = parse_url($databaseUrl);
+                $dbConfig['dbname'] = ltrim('/', $data['path']);
                 $dbConfig['host'] = $data['host'];
+                $dbConfig['user'] = $data['user'];
+                $dbConfig['password'] = $data['pass'];
+                $dbConfig['port'] = $data['port'] ?? 3306;
             } else {
-                throw new \Exception('Unable to read host in file: "' . $absolutePathWithEnvFile . '"');
+                $dbConfig['dbname'] = getenv('DATABASE_NAME');
+                $dbConfig['host'] = getenv('DATABASE_HOST');
+                $dbConfig['user'] = getenv('DATABASE_USER');
+                $dbConfig['password'] = getenv('DATABASE_PASSWORD');
+                $dbConfig['port'] = getenv('DATABASE_PORT') ?: 3306;
             }
-            if (!empty(ltrim($data['path'], '/'))) {
-                $dbConfig['dbname'] = ltrim($data['path'], '/');
-            } else {
+            if (empty($dbConfig['host'])) {
+                throw new \Exception('Unable to read database host in file: "' . $absolutePathWithEnvFile . '"');
+            }
+            if (empty($dbConfig['dbname'])) {
                 throw new \Exception('Unable to read database name in file: "' . $absolutePathWithEnvFile . '"');
             }
-            if (!empty($data['user'])) {
-                $dbConfig['user'] = $data['user'];
-            } else {
+            if (empty($dbConfig['user'])) {
                 throw new \Exception('Unable to read database user in file: "' . $absolutePathWithEnvFile . '"');
             }
-            if (!empty($data['pass'])) {
-                $dbConfig['password'] = $data['pass'];
-            } else {
+            if (empty($dbConfig['password'])) {
                 throw new \Exception('Unable to read database password in file: "' . $absolutePathWithEnvFile . '"');
             }
             return $dbConfig;
