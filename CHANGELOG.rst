@@ -2,8 +2,8 @@
 Changelog
 ---------
 
-master
-~~~~~~
+2.0.0
+~~~~~
 
 1) [BREAKING] Increase deployer/dist version, and deployer-extended-* stack.
 2) [BREAKING] Modify deploy tasks order / add new tasks to deploy.
