@@ -6,6 +6,7 @@ Changelog
 ~~~~~
 
 1) [POSSIBLE-BREAKING] Change getting env from getenv to $_ENV array.
+2) [BUGFIX] Check for port not ste before access key.
 
 2.0.0
 ~~~~~

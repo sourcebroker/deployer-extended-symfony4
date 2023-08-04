@@ -29,7 +29,7 @@ class Symfony4Driver
                 'user' => '',
                 'password' => '',
                 'charset' => 'utf8',
-                'port' => $data['port']
+                'port' => isset($data['port']) ? $data['port'] : ''
             ];
             if (!empty($data['host'])) {
                 $dbConfig['host'] = $data['host'];
