@@ -21,7 +21,7 @@ class Symfony4Driver
         }
         if (file_exists($absolutePathWithEnvFile)) {
             (new Dotenv())->loadEnv($absolutePathWithEnvFile);
-            $data = parse_url(getenv('DATABASE_URL'));
+            $data = parse_url($_ENV['DATABASE_URL']);
             $dbConfig = [
                 'driver' => 'pdo_mysql',
                 'host' => '127.0.0.1',
